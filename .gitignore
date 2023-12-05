@@ -10,3 +10,4 @@ wp-config-*.php
 .idea/
 # Ignore local environment-specific files
 .env
+.vs
