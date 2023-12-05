@@ -1,0 +1,12 @@
+ProjectSettings.json
+slnx.sqlite
+VSWorkspaceState.json
+.wsuo
+# Ignore configuration files that contain sensitive information
+wp-config.php
+wp-config-*.php
+# Ignore editor or IDE configuration files
+.vscode/
+.idea/
+# Ignore local environment-specific files
+.env
