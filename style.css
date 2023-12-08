@@ -89,7 +89,7 @@ input:focus {
   background-color: #fbf778;
   outline: none;
 }
-.submit-btn {
+.submit-btn,.csl-btn, .b-btn {
   cursor: pointer;
   background-color: transparent;
   border: 2px solid #fbf778;
@@ -101,7 +101,7 @@ input:focus {
   font-weight: 500;
   color: #fbf778;
 }
-.submit-btn:hover {
+.submit-btn,.csl-btn:hover {
   background-color: #fbf778;
   transform: translateY(-3px);
   color: #063b39;
@@ -122,4 +122,57 @@ input:focus {
 footer {
   align-self: center;
   padding-top: 1rem;
+}
+
+/* modal */
+
+.modal-container {
+  width: 70%;
+  height: 95%;
+  background-color: #11716e;
+  position: absolute;
+  left: 15%;
+  top: 3%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 15px 15px 15px 0px rgba(2, 2, 2, 0.75);
+}
+
+.modal-show{
+  background-color: red;
+  display: block;
+}
+.modal-hide{
+  background-color: blue;
+  /* display: none;  */
+}
+
+#cancel-icon{
+  align-self: flex-end;
+  font-size: 2.5rem !important;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+#cancel-icon:hover{
+  color: white;
+}
+article{
+  width: 80%;
+  padding: 0 2rem 2rem 2rem;
+}
+.modal-btn-container{
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.b-btn{
+  background-color: rgb(8, 104, 8);
+}
+.b-btn:hover {
+  background-color: rgb(2, 129, 2);
+  transform: translateY(-3px);
+  color: #063b39;
 }

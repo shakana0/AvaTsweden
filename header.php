@@ -4,13 +4,26 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php wp_head(); ?> 
+    <title><?php bloginfo('name'); ?></title>
+    <?php wp_head(); ?>
 </head>
 
 <body>
     <!-- <?php wp_body_open(); ?> -->
     <header>
-        <h1>Oslo Analytic</h1>
-        <h2>Estimate carbon footprint and analyze any website!</h2>
-       
+        <?php
+        if (have_posts()) :
+            while (have_posts()) :
+                the_post();
+                $post_title = get_the_title();
+
+                if ($post_title === 'Oslo Analytic') {
+        ?>
+                    <h1><?php the_title(); ?></h1>
+                    <h2><?php the_content(); ?></h2>
+        <?php
+                }
+            endwhile;
+        endif;
+        ?>
     </header>
