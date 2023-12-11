@@ -1,10 +1,9 @@
 <?php session_start(); ?>
-<?php unset($_SESSION['url']); ?>
-<?php unset($_POST["url"]) ?>
 <?php get_header(); ?>
 
 <?php
 // Validate the value from the input field
+$isShowModal = false;
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
     if (empty($_POST["url"])) {
         $errMsg = "URL is required";
@@ -12,6 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
         $errMsg = "URL has invalid format. Try writing the URL like this: https://www.example.com";
     } else {
         $_SESSION["url"] = strip_tags($_POST["url"]);
+        $isShowModal = true;
+        $response = get_custom_message();
+        echo $response;
     }
 }
 ?>
@@ -33,7 +35,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
 </main>
 
 <?php
-// get_template_part('modal');
+if ($isShowModal) {
+    get_template_part('modal');
+}
 ?>
+<script>
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
+    }
+</script>
 
 <?php get_footer(); ?>
