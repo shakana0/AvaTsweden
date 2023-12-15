@@ -16,3 +16,30 @@ function avatsweden_enqueue_scripts()
 }
 //wp hook
 add_action('wp_enqueue_scripts', 'avatsweden_enqueue_scripts');
+
+
+//wp http request
+function get_custom_message($url)
+{
+    //endpoint url
+    $api_url = 'https://az-message-creator.azurewebsites.net/api/Function1?code=Dd8gEFxImrQcopR7up61DystqTOVty3zgFIMhDHbBZPBAzFufDugnA==';
+    // Request parameters - sample data for creating a new post
+    $request_args = array(
+        'body' => json_encode(array(
+            'name' => $url,
+        )),
+        'headers' => array(
+            'Content-Type' => 'application/json; charset=utf-8',
+        ),
+    );
+    $response = wp_remote_post($api_url, $request_args);
+
+    if (is_wp_error($response)) {
+        // echo "Something went wrong!";
+        $error_message = $response->get_error_message();
+        return "Something went wrong: $error_message";
+    } else {
+        // echo "success";
+        return wp_remote_retrieve_body($response);
+    }
+}

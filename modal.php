@@ -1,56 +1,64 @@
-<section class="modal-container" id="modal">
+<?php session_start(); ?>
+<div class="modal-container" id="modal">
     <span class="material-symbols-outlined" id="cancel-icon">
         close
     </span>
-    <article>
-        <h2>Your Result</h2>
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-            sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-            Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting,
-        </p>
-    </article>
+    <section>
+        <h2>Your Websites’ Grade A-F​</h2>
+        <div class="result-container">
+            <article>
+                <span>C</span>
+                <div class="text-container">
+                    <h4>Carbon</h4>
+                    <p>
+                        <?php echo $_SESSION["message"] ?>
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    </p>
+                </div>
+            </article>
+            <article>
+                <span>D</span>
+                <div class="text-container">
+                    <h4>Carbon</h4>
+                    <p>
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    </p>
+                </div>
+            </article>
+            <article>
+                <span>F</span>
+                <div class="text-container">
+                    <h4>Carbon</h4>
+                    <p>
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    </p>
+                </div>
+            </article>
+        </div>
+
+    </section>
     <div class="modal-btn-container">
-        <button class="csl-btn">Get counseling</button>
-        <button class="b-btn">Buy Plugin</button>
+        <div>
+            <p>Want to make a difference but unsure how? We're here to guide you!​</p>
+            <a href="https://osloanalytic.com/" target="_blank">
+                <button class="csl-btn"> Counseling</button>
+            </a>
+        </div>
+        <div>
+            <p>Transform your site instantly ​– click for our quick-fix plugin!</p>
+            <a href="http//" target="_blank">
+                <button class="b-btn">Buy Plugin</button>
+            </a>
+        </div>
     </div>
-</section>
+</div>
 
 <script>
-    // Get the modal element
-    var modal = document.getElementById('modal');
-
-    // Get the button that opens the modal
-    // var openModalBtn = document.getElementById('openModalBtn');
-
-    // Get the close button element (× symbol)
-    var closeButton = document.getElementById('cancel-icon');
-
-    //Function to open the modal
-    // openModalBtn.onclick = function() {
-    //     modal.style.display = 'block';
-    // }
-
+    // Get the modal elements
+    const modal = document.getElementById('modal');
+    const closeButton = document.getElementById('cancel-icon');
     // Function to close the modal when the close button is clicked
     closeButton.onclick = function() {
-        console.log('close button clicked');
         modal.style.display = 'none';
-    }
-
-    // Function to close the modal when clicking outside the modal
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
     }
 </script>

@@ -11,9 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
         $errMsg = "URL has invalid format. Try writing the URL like this: https://www.example.com";
     } else {
         $_SESSION["url"] = strip_tags($_POST["url"]);
+        $response = get_custom_message($_SESSION["url"]);
+        //echo $response;
+        $_SESSION["message"] = $response;
         $isShowModal = true;
-        $response = get_custom_message();
-        echo $response;
     }
 }
 ?>
@@ -35,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
 </main>
 
 <?php
-if ($isShowModal) {
+if ($isShowModal && isset($_SESSION["message"])) {
     get_template_part('modal');
 }
 ?>
