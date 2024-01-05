@@ -1,7 +1,7 @@
 /*
 Theme Name: Avat Sweden
 Theme URI: https://wordpress.org/themes/avatsweden/
-Author: Shakana
+Author: Avat Sweden
 Author URI: https://wordpress.org/
 Description: Oslo Analytic
 Requires at least: 5.3
@@ -26,6 +26,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-family: "Roboto", sans-serif;
 }
 header {
   height: 4rem;
@@ -44,7 +45,7 @@ h2 {
 p {
   font-family: "Lato", sans-serif;
   line-height: 1.8;
-  color: #e1d9d1;
+  color: white;
 }
 
 main {
@@ -103,8 +104,7 @@ input:focus {
   font-weight: 500;
   color: #fbf778;
 }
-.submit-btn,
-.csl-btn:hover {
+.submit-btn:hover {
   background-color: #fbf778;
   transform: translateY(-3px);
   color: #063b39;
@@ -130,17 +130,16 @@ footer {
 /* modal */
 .modal-container {
   width: 85%;
-  height: 95%;
-  background-color: #11716e;
+  background-color: #063b39;
   position: absolute;
   left: 7.5%;
-  top: 3%;
+  top: 7%;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   box-shadow: 15px 15px 15px 0px rgba(2, 2, 2, 0.75);
-  overflow-y: scroll;
+  overflow-y: auto;
+  height: 550px;
 }
 .modal-container::-webkit-scrollbar {
   background: #fbf778;
@@ -156,11 +155,10 @@ footer {
   justify-content: space-between;
   align-items: center;
   margin-top: 2rem;
-  padding: 0.5rem 0 0 0.5rem;
+  padding: 0.5rem;
 }
 
-.result-container span {
-  background-color: #fbf778;
+.grade {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -170,12 +168,33 @@ footer {
   justify-content: center;
   font-size: 1.5rem;
   font-weight: 600;
+  color: white;
+}
+
+/* Background color for the grades */
+.F {
+  background-color: #c00000;
+}
+.B {
+  background-color: #ffa95b;
+}
+.C {
+  background-color: #fe7e30;
+}
+.D {
+  background-color: #fe440a;
 }
 
 .result-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
+  min-height: 250px;
+}
+
+.error-msg{
+  color: white;
 }
 
 .text-container {
@@ -185,9 +204,12 @@ footer {
 .text-container h4 {
   color: #fbf778;
   margin: 0;
+  font-size: 1rem;
 }
 .text-container p {
   margin: 0;
+  text-align: left !important;
+  font-size: 0.8rem;
 }
 #cancel-icon {
   align-self: flex-end;
@@ -204,28 +226,46 @@ footer {
   margin-top: 0;
   font-size: 2rem;
 }
-.modal-btn-container {
-  margin-bottom: 2rem;
+#modal p {
+  text-align: center;
+}
+.modal-btn-container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+.modal-btn-container section{
   display: flex;
   justify-content: space-around;
-  margin-top: 3rem;
 }
 .modal-btn-container div {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-direction: column;
   width: 20%;
 }
 .modal-btn-container p {
-  font-size: .8rem;
-  width: 80%;
+  font-size: 0.8rem;
+  width: 100%;
+}
+
+.modal-btn-container button {
+  color: black;
+  border: none;
+  min-width: 140px;
+}
+.modal-btn-container button span {
+  font-size: 0.9rem;
+  font-weight: bold;
 }
 .b-btn {
-  background-color: rgb(8, 104, 8);
+  background-color: #92d050;
 }
-.b-btn:hover {
-  background-color: rgb(2, 129, 2);
+.csl-btn {
+  background-color: #f4fb7f;
+}
+.b-btn:hover, .csl-btn:hover {
   transform: translateY(-3px);
   color: #063b39;
 }
+

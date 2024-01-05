@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    <!-- <?php wp_body_open(); ?> -->
     <header>
         <?php
         if (have_posts()) :

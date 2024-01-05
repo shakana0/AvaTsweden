@@ -1,17 +1,12 @@
 <?php
-// FILEPATH: /c:/xampp/htdocs/wordpress/wp-content/themes/avatsweden/404.php
-
-// Set the HTTP response code to 404
-http_response_code(404);
+get_header();
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>404 Not Found</title>
-</head>
-<body>
-    <h1>404 Not Found</h1>
-    <p>The page you are looking for could not be found.</p>
-</body>
-</html>
+<main>
+    <h1>Sorry, Page Not Found</h1>
+    <a href="<?php echo home_url(); ?>">
+        <p class>Go to homepage</p>
+    </a>
+</main>
+<?php
+get_footer();
+?>
