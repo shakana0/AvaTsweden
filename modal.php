@@ -4,7 +4,7 @@
         close
     </span>
     <section>
-        <h2>Your Websites’ Grade A-F​</h2>
+        <h2>Your Website's Grade A-F​</h2>
         <p><?php echo $_SESSION["url"] ?></p>
         <div class="result-container">
             <?php

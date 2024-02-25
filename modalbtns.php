@@ -2,7 +2,7 @@
     <p>See more details about your results​</p>
     <section>
         <div>
-            <a href="https://osloanalytic.com/" target="_blank">
+            <a href="https://osloanalytic.com/service-finder" target="_blank">
                 <button class="csl-btn">
                     <span>Consulting</span>
                 </button>
@@ -10,7 +10,7 @@
             <p>Want to make a difference but unsure how? We're here to guide you!​</p>
         </div>
         <div>
-            <a href="http//" target="_blank">
+            <a href="https://osloanalytic.com/WPOptimiser" target="_blank">
                 <button class="b-btn">
                     <span>Plugin</span>
                 </button>
